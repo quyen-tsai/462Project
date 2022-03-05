@@ -1,2 +1,1 @@
-# 462Project - Quizitivity
-
+# Hello
