@@ -1,30 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-import {
-  Link
-} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Login() {
-  return ( <
-    Boxs >
-
-    <
-    Smallbox >
-    <
-    Form >
-    <
-    Text > Login: < /Text> <
-    Label > Username: < Input type = 'text' > < /Input></Label >
-    <
-    Label2 > Password: < Input type = 'text' > < /Input></Label2 >
-    <
-    /Form> <
-    BoxBtnLink to = '/' > Login into your account < /BoxBtnLink> < /
-    Smallbox >
-
-
-    <
-    /Boxs>
+  return (
+    <Boxs>
+      
+        <Smallbox>
+        <Form>
+          <Text> Login:</Text>
+          <Label>Username: <Input type='text'></Input></Label>
+          <Label2>Password: <Input type='text'></Input></Label2>
+          </Form>
+        <BoxBtnLink to='/'>Login into your account</BoxBtnLink>
+        </Smallbox>
+        
+      
+    </Boxs>
   )
 }
 
@@ -51,7 +43,7 @@ export const Smallbox = styled.div `
 `;
 
 
-export const Form = styled.form `
+export const Form = styled.form`
   position: static;
   display:flex;
   flex-direction: column;
@@ -60,7 +52,7 @@ export const Form = styled.form `
   align-items: center;
   gap: 5px;
 `
-export const Label = styled.label `
+export const Label = styled.label`
     font-size: 25px;
     font-weight: bold;
     color: #27FFC9;
@@ -69,7 +61,7 @@ export const Label = styled.label `
     align-items: center;
     justify-content: center;
 `
-export const Label2 = styled.label `
+export const Label2 = styled.label`
     font-size: 25px;
     font-weight: bold;
     color: #27FFC9;
@@ -79,10 +71,10 @@ export const Label2 = styled.label `
     justify-content: center;
 `
 
-export const Input = styled.input `
+export const Input = styled.input`
     height: 30px;
 `
-export const Text = styled.p `
+export const Text = styled.p`
   font-size: 35px;
   font-weight: bold;
   color: #27FFC9;
