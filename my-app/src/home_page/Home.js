@@ -4,7 +4,7 @@ import Navbar from './home_page/components/navbar'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Textbox from './home_page/components/textbox';
 import styled from 'styled-components';
-function App() {
+function Homes() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const handleOnSubmit = async (e) => {
@@ -37,7 +37,8 @@ function App() {
 }
 
 
-export default App;
+export default Homes;
+
 export const Home = styled.div`
 display: flex;
 flex-direction: column;
