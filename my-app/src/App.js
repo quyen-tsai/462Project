@@ -1,9 +1,12 @@
 import { useState } from 'react'
-import React, { Component }  from 'react';
+import React, { Fragment }  from 'react';
 import Navbar from './home_page/components/navbar'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Textbox from './home_page/components/textbox';
 import styled from 'styled-components';
+import Homes from './Homes';
+import Login from './Login/Login';
+
 function App() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -27,25 +30,28 @@ function App() {
     }
     return (
         <Home>
-            <Router><Navbar/></Router>
-             <Textbox>
-
-</Textbox>
+            <Router>
+            <Navbar/>
+            <Routes>
+                <Route path='/' exact element={<Homes/>}/>  
+                <Route path='/login' exact element={<Login/>}/>
+            </Routes>
+            </Router>
         </Home>
         
+        // <Homes></Homes>
     );
 }
 
 
 export default App;
+
 export const Home = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: space-between;
 gap: 200px;
 align-items: center;
-
 `
-
 
 

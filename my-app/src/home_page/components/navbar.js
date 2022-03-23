@@ -16,7 +16,7 @@ const Navbar = () => {
         <Bars />
         <Logo>Quiztivity</Logo>
         <NavMenu>
-          <NavLink to='/about' activestyle ="true">
+          <NavLink to='/' activestyle ="true">
             Home
           </NavLink>
           <NavLink to='/events'  activestyle ="true">
@@ -36,7 +36,7 @@ const Navbar = () => {
         </NavMenu>
 
         <NavBtn>
-          <NavBtnLink to='/signin'>Log In</NavBtnLink>
+          <NavBtnLink to='/login'>Log In</NavBtnLink>
           <NavBtnLink to='/signup'>Sign Up</NavBtnLink>
         </NavBtn>
       </Nav>

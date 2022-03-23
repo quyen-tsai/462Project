@@ -11,10 +11,7 @@ function Textbox() {
                     <BigText>Our Mission</BigText>
                     <SmallText>A modernistic quizzing environment for students</SmallText>
                 </TextContainer>
-
-                <Router>
-                    <BoxBtn><BoxBtnLink to='./index'>Create an account</BoxBtnLink></BoxBtn>
-                </Router>
+                <BoxBtn><BoxBtnLink to='/'>Create an account</BoxBtnLink></BoxBtn>
             </Container>
             
             <Img src={require('../../../src/images/Image1.png')}></Img>
