@@ -6,6 +6,7 @@ import Textbox from './home_page/components/textbox';
 import styled from 'styled-components';
 import Homes from './Homes';
 import Login from './Login/Login';
+import Signup from './Signup/Signup';
 
 function App() {
     const [name, setName] = useState("");
@@ -35,6 +36,7 @@ function App() {
             <Routes>
                 <Route path='/' exact element={<Homes/>}/>  
                 <Route path='/login' exact element={<Login/>}/>
+                    <Route path='signup' exact element={<Signup/>}/>
             </Routes>
             </Router>
         </Home>
