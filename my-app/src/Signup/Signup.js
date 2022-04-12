@@ -1,17 +1,40 @@
-import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
 function Signup() {
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+    const handleOnSubmit = async (e) => {
+        e.preventDefault();
+        let result = await fetch(
+        'http://localhost:5000/register', {
+            method: "post",
+            body: JSON.stringify({ name, email, password }),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        result = await result.json();
+        console.warn(result);
+        if (result) {
+            alert("Data saved successfully");
+            setEmail("");
+            setName("");
+            setPassword("");
+        }
+    }
   return (
     <Boxs>
         <Text>Signing You Up For Productivity!</Text>
         <Smallbox>
             <Form>
-                <Label>Full Name: <Input type='text'></Input></Label>
-                <Label2>Email: <Input type='text'></Input></Label2>
-                <Label3>Password: <Input type='text'></Input></Label3>
+                <Label>Full Name: <Input type='text' value={name} onChange={(e) => setName(e.target.value)}></Input></Label>
+                <Label2>Email: <Input type='text'  value={email} onChange={(e) => setEmail(e.target.value)}></Input></Label2>
+                <Label3>Password: <Input type='password' value={password} onChange={(e) => setPassword(e.target.value)}></Input></Label3>
             </Form>
-            <BoxBtnLink to='/login'>Sign up</BoxBtnLink>
+            <BoxBtnLink onClick={handleOnSubmit} to='/login'>Sign up</BoxBtnLink>
         </Smallbox>
     </Boxs>
   )

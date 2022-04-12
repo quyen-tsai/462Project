@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 
 function Login() {
+  const [Login, setLogin] = useState(false);
+  
   return (
     <Boxs>
       
@@ -10,9 +12,9 @@ function Login() {
         <Form>
           <Text> Login:</Text>
           <Label>Username: <Input type='text'></Input></Label>
-          <Label2>Password: <Input type='text'></Input></Label2>
+          <Label2>Password: <Input type='password'></Input></Label2>
           </Form>
-        <BoxBtnLink to='/'>Login into your account</BoxBtnLink>
+        <BoxBtnLink to='/' >Login into your account</BoxBtnLink>
         </Smallbox>
         
       
