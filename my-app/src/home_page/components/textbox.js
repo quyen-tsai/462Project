@@ -2,6 +2,11 @@ import styled from 'styled-components'
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+// import useSound from 'use-Sound';
+// import PlayButton from 'use-sound';
+
+
+
 function Textbox() {
     return ( 
         <Boxs>
@@ -11,7 +16,7 @@ function Textbox() {
                     <BigText>Our Mission</BigText>
                     <SmallText>A modernistic quizzing environment for students</SmallText>
                 </TextContainer>
-                <BoxBtn><BoxBtnLink to='/'>Create an account</BoxBtnLink></BoxBtn>
+                <BoxBtn><BoxBtnLink to='/signup'>Create an account</BoxBtnLink></BoxBtn>
             </Container>
             
             <Img src={require('../../../src/images/Image1.png')}></Img>
@@ -20,6 +25,23 @@ function Textbox() {
 
     )
 }
+// function Demo() {
+// 	const soundUrl = '/sounds/guitar-loop.mp3';
+  
+// 	const [play, { stop, isPlaying }] = useSound(soundUrl);
+  
+// 	return (
+// 	  <PlayButton
+// 		active={isPlaying}
+// 		size={60}
+// 		iconColor="var(--color-background)"
+// 		idleBackgroundColor="var(--color-text)"
+// 		activeBackgroundColor="var(--color-primary)"
+// 		play={play}
+// 		stop={stop}
+// 	  />
+// 	);
+//   }
 
 export default Textbox
 
