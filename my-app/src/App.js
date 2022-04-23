@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import React, { Fragment }  from 'react';
-import Navbar from './home_page/components/navbar'
+import Navbar from './home_page/navbar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Textbox from './home_page/components/textbox';
+import Textbox from './home_page/textbox';
 import styled from 'styled-components';
 import Homes from './Homes';
 import Login from './Login/Login';

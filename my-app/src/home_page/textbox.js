@@ -19,7 +19,7 @@ function Textbox() {
                 <BoxBtn><BoxBtnLink to='/signup'>Create an account</BoxBtnLink></BoxBtn>
             </Container>
             
-            <Img src={require('../../../src/images/Image1.png')}></Img>
+            <Img src={require('../../../my-app/src/images/Image1.png')}></Img>
         </Boxs>
 
 
