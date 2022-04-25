@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from "react";
 import db from '../firebase'
+import validator from 'validator'
 function Signup() {
 
   const [user_name, setName] = useState("");
@@ -9,19 +10,25 @@ function Signup() {
   const [user_password, setPassword] = useState("");
     const handleOnSubmit = async (e) => {
         e.preventDefault();
-        db.collection("UserLoginData").add({
-          name: user_name,
-          email: user_email,
-          password: user_password
-        });
+        if (validator.isEmail(user_email))
+        {
+          db.collection("UserLoginData").add({
+            name: user_name,
+            email: user_email,
+            password: user_password
+          });
+          alert("Sign up successfully!")
+        }
+        else alert("Invalid email")
     }
+
   return (
     <Boxs>
         <Text>Signing You Up For Productivity!</Text>
         <Smallbox>
             <Form>
-                <Label>Full Name: <Input type='text' value={user_name} onChange={(e) => setName(e.target.value)}></Input></Label>
-                <Label2>Email: <Input type='text'  value={user_email} onChange={(e) => setEmail(e.target.value)}></Input></Label2>
+                <Label>Full Name: <Input type='text' value={user_name} placeholder='First Last' onChange={(e) => setName(e.target.value)}></Input></Label>
+                <Label2>Email: <Input type='text'  value={user_email} placeholder='abc@gmail.com' onChange={(e) => setEmail(e.target.value)}></Input></Label2>
                 <Label3>Password: <Input type='password' value={user_password} onChange={(e) => setPassword(e.target.value)}></Input></Label3>
             </Form>
             <BoxBtnLink onClick={handleOnSubmit} to='/login'>Sign up</BoxBtnLink>
