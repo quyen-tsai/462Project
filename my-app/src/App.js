@@ -12,11 +12,11 @@ import Navbar2 from './components/navbar2';
 function App() {
 
     const [childData, setChildData] = useState("");
-    if(childData == "TRUE"){
+    if(childData === "TRUE"){
         console.log('nice')
     }
     else(console.log("not nice"));
-    if(childData == "TRUE"){
+    if(childData === "TRUE"){
         return (
             <Home>
                 <Router>
