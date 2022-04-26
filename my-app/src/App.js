@@ -9,6 +9,7 @@ import Login from './Login/Login';
 import Signup from './Signup/Signup';
 import PlaySound from './components/sound';
 import Navbar2 from './components/navbar2';
+import Home2 from './components/Home2';
 function App() {
 
     const [childData, setChildData] = useState("");
@@ -21,6 +22,9 @@ function App() {
             <Home>
                 <Router>
                 <Navbar2/>
+                <Routes>
+                    <Route path='/Home2' exact element={<Home2/>}/>  
+                </Routes>
                 </Router>
             </Home>
             // <Homes></Homes>

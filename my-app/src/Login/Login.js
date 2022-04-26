@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 function Login(props) {
  
   const [user_email, setEmail] = useState("");
   const [user_password, setPassword] = useState("");
-
+  const nav = useNavigate();
   const functionHandler = () => {
     props.passChildData("TRUE");
     }
@@ -19,6 +20,7 @@ function Login(props) {
     const user = userCredential.user;
     alert("IN!");
     functionHandler();
+    nav('/Home2')
   })
   .catch((error) => {
     const errorCode = error.code;
