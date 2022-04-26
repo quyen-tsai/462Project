@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from "react";
-import db from '../firebase'
-import validator from 'validator'
+import db from '../firebase';
+import validator from 'validator';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 function Signup() {
 
   const [user_name, setName] = useState("");
@@ -10,18 +12,40 @@ function Signup() {
   const [user_password, setPassword] = useState("");
     const handleOnSubmit = async (e) => {
         e.preventDefault();
+        var err = false;
         if (validator.isEmail(user_email))
         {
-          db.collection("UserLoginData").add({
-            name: user_name,
-            email: user_email,
-            password: user_password
+          const auth = getAuth(); 
+          createUserWithEmailAndPassword(auth, user_email, user_password).then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorCode, errorMessage);
+            err = true;
+            console.log(err);
+            // ..
           });
-          alert("Sign up successfully!")
+          // if(!err){
+ 
         }
-        else alert("Invalid email")
-    }
+        else {alert("Invalid email");
+        err = true;
+      }
 
+        if(!err){
+            db.collection("UserLoginData").add({
+              name: user_name,
+              email: user_email,
+              password: user_password
+            });
+            alert("Sign up successfully!");
+        }
+    }
+    
   return (
     <Boxs>
         <Text>Signing You Up For Productivity!</Text>
