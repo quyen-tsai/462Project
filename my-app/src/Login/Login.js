@@ -2,28 +2,33 @@ import React, { useEffect, useState } from "react";
 import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import firebase from 'firebase/compat/app';
-function Login() {
-  const [Login, setLogin] = useState(false);
+function Login(props) {
+ 
   const [user_email, setEmail] = useState("");
   const [user_password, setPassword] = useState("");
+
+  const functionHandler = () => {
+    props.passChildData("TRUE");
+    }
+
   const handleOnSubmit = async (e) => {
     e.preventDefault();
     const auth = getAuth();
     signInWithEmailAndPassword(auth, user_email, user_password).then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    alert("IN!")
-    // ...
+    alert("IN!");
+    functionHandler();
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
     alert(errorMessage)
   });
-  var user2 = firebase.auth().currentUser;
-  console.log(user2)
   }
+
+
+
   return (
     <Boxs>
       
@@ -33,7 +38,7 @@ function Login() {
           <Label>Username: <Input type='text'  value={user_email} placeholder='abc@gmail.com' onChange={(e) => setEmail(e.target.value)}></Input></Label>
           <Label2>Password: <Input type='password' value={user_password} onChange={(e) => setPassword(e.target.value)} ></Input></Label2>
           </Form>
-        <BoxBtnLink to='/' onClick={handleOnSubmit}>Login into your account</BoxBtnLink>
+        <BoxBtnLink type="submit" to='/' onClick={handleOnSubmit}>Login into your account</BoxBtnLink>
         </Smallbox>
         
       
@@ -41,7 +46,7 @@ function Login() {
   )
 }
 
-export default Login
+export default Login;
 
 export const Boxs = styled.div `
     display:flex;

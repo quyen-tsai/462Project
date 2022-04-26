@@ -36,9 +36,6 @@ export const NavLink = styled(Link)
   height: 100%;
   cursor: pointer;
   font-weight: bold;
-  &.active {
-    color: #000000;
-  }
   &:hover {
     height: 50%;
     border-radius: 40px;

@@ -9,19 +9,25 @@ import Login from './Login/Login';
 import Signup from './Signup/Signup';
 import PlaySound from './components/sound';
 function App() {
+
+    const [childData, setChildData] = useState("");
+    if(childData == "TRUE"){
+        console.log('nice')
+    }
+    else(console.log("not nice"));
     return (
+       
         <Home>
             <Router>
             <Navbar/>
             <Routes>
                 <Route path='/' exact element={<Homes/>}/>  
-                <Route path='/login' exact element={<Login/>}/>
+                <Route path='/login' exact element={<Login passChildData={setChildData}/>}/>
                     <Route path='signup' exact element={<Signup/>}/>
             </Routes>
             </Router>
             <PlaySound/>
         </Home>
-        
         // <Homes></Homes>
     );
 }

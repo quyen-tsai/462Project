@@ -7,9 +7,9 @@ import {
   NavBtn,
   NavBtnLink,
   Logo,
-} from './NavElements.js';
+} from '../home_page/NavElements.js';
   
-const Navbar = () => {
+const Navbar2 = () => {
   return (
     <>
       <Nav>
@@ -19,29 +19,29 @@ const Navbar = () => {
           <NavLink to='/' activestyle ="true">
             Home
           </NavLink>
-          <NavLink to='/'  activestyle ="true">
+          <NavLink to='/math'  activestyle ="true">
             Math
           </NavLink>
-          <NavLink to='/'  activestyle ="true">
+          <NavLink to='/physics'  activestyle ="true">
             Physics
           </NavLink>
-          <NavLink to='/'  activestyle ="true">
+          <NavLink to='/Chemistry'  activestyle ="true">
             Chemistry
           </NavLink>
-          <NavLink to='/'  activestyle ="true">
-            Computer Sience
+          <NavLink to='/Computer Science'  activestyle ="true">
+            Computer Science
           </NavLink>
           {/* Second Nav */}
           {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
         </NavMenu>
 
-        <NavBtn>
+        {/* <NavBtn>
           <NavBtnLink to='/login'>Log In</NavBtnLink>
           <NavBtnLink to='/signup'>Sign Up</NavBtnLink>
-        </NavBtn>
+        </NavBtn> */}
       </Nav>
     </>
   );
 };
   
-export default Navbar;
+export default Navbar2;
