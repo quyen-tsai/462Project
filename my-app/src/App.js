@@ -8,6 +8,7 @@ import Homes from './Homes';
 import Login from './Login/Login';
 import Signup from './Signup/Signup';
 import PlaySound from './components/sound';
+import Navbar2 from './components/navbar2';
 function App() {
 
     const [childData, setChildData] = useState("");
@@ -15,21 +16,33 @@ function App() {
         console.log('nice')
     }
     else(console.log("not nice"));
-    return (
-       
-        <Home>
-            <Router>
-            <Navbar/>
-            <Routes>
-                <Route path='/' exact element={<Homes/>}/>  
-                <Route path='/login' exact element={<Login passChildData={setChildData}/>}/>
-                    <Route path='signup' exact element={<Signup/>}/>
-            </Routes>
-            </Router>
-            <PlaySound/>
-        </Home>
-        // <Homes></Homes>
-    );
+    if(childData == "TRUE"){
+        return (
+            <Home>
+                <Router>
+                <Navbar2/>
+                </Router>
+            </Home>
+            // <Homes></Homes>
+        );
+    }
+    else{
+        return (
+            <Home>
+                <Router>
+                <Navbar/>
+                <Routes>
+                    <Route path='/' exact element={<Homes/>}/>  
+                    <Route path='/login' exact element={<Login passChildData={setChildData}/>}/>
+                        <Route path='signup' exact element={<Signup/>}/>
+                </Routes>
+                </Router>
+                <PlaySound/>
+            </Home>
+            // <Homes></Homes>
+        );
+    }
+    
 }
 
 
