@@ -49,6 +49,7 @@ function App() {
 export default App;
 
 export const Home = styled.div`
+background-image: linear-gradient(315deg, #504C4C 0%, #263a3a 100%);
 display: flex;
 flex-direction: column;
 justify-content: space-between;

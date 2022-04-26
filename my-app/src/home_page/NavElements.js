@@ -7,6 +7,7 @@ import {
 import styled from 'styled-components';
 export const Nav = styled.nav `
   background: #504C4C;
+  background-image: linear-gradient(315deg, #504C4C 0%, #263a3a 100%);
   height: 70px;
   display: flex;
   justify-content: space-between;
