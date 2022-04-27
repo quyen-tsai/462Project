@@ -19,14 +19,14 @@ function App() {
     else(console.log("not nice"));
     if(childData === "TRUE"){
         return (
-            <Home>
+            <Homes2>
                 <Router>
                 <Navbar2/>
                 <Routes>
                     <Route path='/Home2' exact element={<Home2/>}/>  
                 </Routes>
                 </Router>
-            </Home>
+            </Homes2>
             // <Homes></Homes>
         );
     }
@@ -59,6 +59,13 @@ flex-direction: column;
 justify-content: space-between;
 gap: 200px;
 align-items: center;
-`
+`;
 
-
+export const Homes2 = styled.div`
+background-image: linear-gradient(315deg, #504C4C 0%, #263a3a 100%);
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+gap: 200px;
+align-items: center;
+`;
