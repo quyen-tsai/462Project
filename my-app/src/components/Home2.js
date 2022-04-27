@@ -2,7 +2,20 @@ import React from 'react'
 import styled from 'styled-components'
 function Home2() {
   return (
-     <Boxs></Boxs>
+     <Boxs>
+         <BoxBtn>
+             Test
+         </BoxBtn>
+         <BoxBtn>
+             Test
+         </BoxBtn>
+         <BoxBtn>
+             Test
+         </BoxBtn>
+         <BoxBtn>
+             Test
+         </BoxBtn>
+     </Boxs>
 
   )
 }
@@ -51,7 +64,12 @@ export const Container = styled.div`
 
 export const BoxBtn = styled.nav `
   display: flex;
+  background-color: white;
+  align-text: center;
+  justify-content: center;
   align-items: center;
+  width: 200px;
+  height: 200px;
   }
 `;
 
