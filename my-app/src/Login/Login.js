@@ -1,10 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import styled from 'styled-components'
-import { Link } from 'react-router-dom';
+import { NavLink as Link} from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+
+
+
+
+
+
+
 function Login(props) {
- 
   const [user_email, setEmail] = useState("");
   const [user_password, setPassword] = useState("");
   const nav = useNavigate();
@@ -19,8 +25,9 @@ function Login(props) {
     // Signed in 
     const user = userCredential.user;
     alert("IN!");
+    console.log(props);
     functionHandler();
-    nav('/Home2')
+    nav('/Home2');
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -29,21 +36,18 @@ function Login(props) {
   });
   }
 
-
+  
 
   return (
     <Boxs>
-      
         <Smallbox>
-        <Form>
+        <Form >
           <Text> Login:</Text>
           <Label>Username: <Input type='text'  value={user_email} placeholder='abc@gmail.com' onChange={(e) => setEmail(e.target.value)}></Input></Label>
           <Label2>Password: <Input type='password' value={user_password} onChange={(e) => setPassword(e.target.value)} ></Input></Label2>
+          <BoxBtnLink type="submit" to='/Home2'onClick={handleOnSubmit} >Login into your account</BoxBtnLink>
           </Form>
-        <BoxBtnLink type="submit" to='/' onClick={handleOnSubmit}>Login into your account</BoxBtnLink>
         </Smallbox>
-        
-      
     </Boxs>
   )
 }
