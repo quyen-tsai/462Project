@@ -11,7 +11,6 @@ import PlaySound from './components/sound';
 import Navbar2 from './components/navbar2';
 import Home2 from './components/Home2';
 function App() {
-
     const [childData, setChildData] = useState("");
     if(childData === "TRUE"){
         console.log('nice')
