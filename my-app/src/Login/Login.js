@@ -45,8 +45,8 @@ function Login(props) {
           <Text> Login:</Text>
           <Label>Username: <Input type='text'  value={user_email} placeholder='abc@gmail.com' onChange={(e) => setEmail(e.target.value)}></Input></Label>
           <Label2>Password: <Input type='password' value={user_password} onChange={(e) => setPassword(e.target.value)} ></Input></Label2>
-          <BoxBtnLink type="submit" to='/Home2'onClick={handleOnSubmit} >Login into your account</BoxBtnLink>
           </Form>
+          <BoxBtnLink type="submit" to='/Home2'onClick={handleOnSubmit} >Login into your account</BoxBtnLink>
         </Smallbox>
     </Boxs>
   )
