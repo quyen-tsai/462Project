@@ -19,7 +19,7 @@ const Navbar2 = () => {
           <NavLink to='/Home2' activestyle ="true">
             Home
           </NavLink>
-          <NavLink to='/math'  activestyle ="true">
+          <NavLink to='/Math'  activestyle ="true">
             Math
           </NavLink>
           <NavLink to='/physics'  activestyle ="true">
