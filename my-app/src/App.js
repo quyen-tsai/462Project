@@ -10,8 +10,9 @@ import Signup from './Signup/Signup';
 import PlaySound from './components/sound';
 import Navbar2 from './components/navbar2';
 import Home2 from './components/Home2';
+import Mathlist from './components/Mathlist';
+import Math from './components/Math'
 function App() {
-
     const [childData, setChildData] = useState("");
     if(childData === "TRUE"){
         console.log('nice')
@@ -24,6 +25,9 @@ function App() {
                 <Navbar2/>
                 <Routes>
                     <Route path='/Home2' exact element={<Home2/>}/>  
+                    <Route path='/login' exact element={<Home2/>}/>
+                    <Route path='/Math' exact element={<Mathlist/>}/>    
+                    <Route path='/MathQuiz' exact element={<Math/>}/>    
                 </Routes>
                 </Router>
             </Homes2>
